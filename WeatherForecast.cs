@@ -1,4 +1,4 @@
-namespace EdgePlane
+namespace EdgePanel
 {
     public class WeatherForecast
     {

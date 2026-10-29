@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace EdgePlane.Controllers
+namespace EdgePanel.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("weather")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries =
