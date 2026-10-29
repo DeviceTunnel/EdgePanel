@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:18
+    restart: unless-stopped
+    container_name: EdgePanel
+    environment:
+      POSTGRES_DB: edgepanel
+      POSTGRES_USER: edgepanel
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - ./postgresql:/var/lib/postgresql
+
