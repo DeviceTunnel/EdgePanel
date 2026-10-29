@@ -5,8 +5,5 @@ namespace EdgePanel.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public abstract class IBaseController : ControllerBase
-    {
-        
-    }    
+    public abstract class IBaseController : ControllerBase;
 }

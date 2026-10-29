@@ -1,3 +1,4 @@
+using EdgePanel.Filters;
 
 namespace EdgePanel
 {
@@ -6,9 +7,13 @@ namespace EdgePanel
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
-            builder.Services.AddControllers();
+            builder.Services.AddSingleton<IProblemDetailsWriter, EnvelopeProblemDetailsWriter>();
+            builder.Services.AddControllers(o => o.Filters.Add<ApiEnvelopeFilter>());
+            builder.Services.AddProblemDetails();
             builder.Services.AddOpenApi();
             WebApplication app = builder.Build();
+            app.UseExceptionHandler();
+            app.UseStatusCodePages();
             if (app.Environment.IsDevelopment())
             {
                 app.MapOpenApi();
@@ -16,13 +21,7 @@ namespace EdgePanel
             app.UseHttpsRedirection();
             app.UseAuthorization();
             app.MapControllers();
-            app.MapFallback(NotFoundHandler);
             app.Run();
-        }
-
-        private static async Task NotFoundHandler(HttpContext context)
-        {
-            throw new NotImplementedException();
         }
     }
 }
