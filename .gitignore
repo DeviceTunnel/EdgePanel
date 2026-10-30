@@ -17,6 +17,7 @@ obj/
 [Bb]in/
 [Oo]bj/
 postgresql/
+redis/
 # Logs
 Logs/
 
