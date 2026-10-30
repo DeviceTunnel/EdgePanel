@@ -5,7 +5,6 @@ public partial class Program
         WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
         builder.Services.AddControllers();
         builder.Services.AddOpenApi();
-        Console.WriteLine(builder.Configuration["KEY"]);
         WebApplication app = builder.Build();
         app.UseHttpsRedirection();
         app.UseAuthorization();
