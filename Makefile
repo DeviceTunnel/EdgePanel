@@ -1,2 +1,2 @@
 server:
-	dotnet run --project src/EdgePanel.API
+	dotnet run --project src/EdgePanel.API --verbosity quiet
