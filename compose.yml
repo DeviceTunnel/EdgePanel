@@ -16,7 +16,7 @@ services:
   redis:
     image: redis:8
     restart: unless-stopped
-    command: ["redis-server", "--appendonly", "yes", "--requirepass", "${REDIS_PASSWORD:?set REDIS_PASSWORD in .env}"]
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", "123123123"]
     ports:
       - "127.0.0.1:6379:6379"
     volumes:
