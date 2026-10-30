@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="EdgePanel.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/EdgePanel.API/EdgePanel.API.csproj" />
+  </Folder>
 </Solution>
