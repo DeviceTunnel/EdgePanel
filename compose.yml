@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_DB: edgepanel
       POSTGRES_USER: edgepanel
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_PASSWORD: edgepanel
     ports:
       - "127.0.0.1:5432:5432"
     volumes:
