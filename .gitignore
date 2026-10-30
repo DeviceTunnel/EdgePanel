@@ -12,6 +12,7 @@ obj/
 *.key
 *.p12
 *.pfx
+appsettings.Development.json
 
 # Build Folders (you can keep bin if you'd like, to store dlls and pdbs)
 [Bb]in/
