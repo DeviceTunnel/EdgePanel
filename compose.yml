@@ -23,3 +23,15 @@ services:
       - "127.0.0.1:6379:6379"
     volumes:
       - ./redis:/data
+
+  api:
+    build: .
+    container_name: EdgeAPI
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "127.0.0.1:5248:8080"
+    depends_on:
+      - postgres
+      - redis
